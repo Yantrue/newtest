@@ -1,4 +1,4 @@
-/* Global reset */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +7,6 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fff;
-  color: #333;
 }
 
 /* Header */
@@ -16,10 +14,10 @@ header {
   position: sticky;
   top: 0;
   background-color: #000;
+  color: #fff;
   padding: 20px;
   text-align: center;
-  color: #fff;
-  z-index: 1000;
+  z-index: 10;
 }
 
 header h1 {
@@ -27,36 +25,65 @@ header h1 {
   letter-spacing: 2px;
 }
 
-/* Image Section */
-.image-section {
-  height: 100vh;
+/* Section layout */
+.character-section {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
+  min-height: 100vh;
+  padding: 60px 40px;
   transition: opacity 1s ease, transform 1s ease;
   opacity: 0;
   transform: translateY(80px);
-  background-color: #f4f4f4;
-  padding: 40px;
+  color: #fff;
 }
 
-.image-section img {
+.character-section .image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.character-section .image-container img {
   max-width: 90%;
-  height: auto;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-  margin-bottom: 20px;
 }
 
-.image-section .caption {
-  font-size: 1.5rem;
-  color: #444;
-  font-weight: 600;
+.character-section .text-container {
+  flex: 1;
+  padding: 20px;
 }
 
-/* Show class for scroll animation */
-.image-section.show {
+.character-section .text-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.character-section .text-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Warna dominan karakter */
+.prolova {
+  background-color: #5e4b8b; /* Ungu gelap elegan */
+}
+
+.shorekeeper {
+  background-color: #1e3d59; /* Biru laut gelap */
+}
+
+/* Animasi show saat scroll */
+.character-section.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Responsive (opsional) */
+@media (max-width: 768px) {
+  .character-section {
+    flex-direction: column;
+    text-align: center;
+  }
 }
