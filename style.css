@@ -5,11 +5,16 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 18px; /* font dasar lebih besar */
+}
+
 body {
   background-color: #000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   overflow-x: hidden;
+  font-size: 1rem; /* ini 18px karena di html */
 }
 
 /* Header */
@@ -19,7 +24,7 @@ header {
 }
 
 .headline {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #00b0ff;
   font-weight: 700;
   letter-spacing: 1px;
@@ -39,7 +44,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 40px;
+  padding: 40px 20px; /* padding lebih kecil */
   min-height: 100vh;
   transition: opacity 1s ease, transform 1s ease;
   opacity: 0;
@@ -57,6 +62,12 @@ header {
   padding: 20px;
 }
 
+/* Batasi lebar teks supaya gak terlalu melebar */
+.text-container {
+  max-width: 600px;
+  margin: auto;
+}
+
 .image-container img {
   width: 100%;
   border-radius: 16px;
@@ -64,14 +75,14 @@ header {
 }
 
 .text-container h2 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #fff;
   margin-bottom: 20px;
 }
 
 .text-container p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.3rem;
+  line-height: 1.8;
   color: #ddd;
 }
 
@@ -131,5 +142,21 @@ footer {
   .character-section {
     flex-direction: column;
     text-align: center;
+    padding: 30px 10px;
+  }
+  
+  .text-container,
+  .image-container {
+    max-width: 100%;
+    padding: 10px 0;
+  }
+  
+  .text-container h2 {
+    font-size: 2rem;
+  }
+
+  .text-container p {
+    font-size: 1rem;
+    line-height: 1.5;
   }
 }
