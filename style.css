@@ -6,7 +6,7 @@
 }
 
 html {
-  font-size: 18px; /* font dasar lebih besar di desktop */
+  font-size: 20px; /* font dasar lebih besar */
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   overflow-x: hidden;
-  font-size: 1rem; /* 18px */
+  font-size: 1rem; /* 20px */
 }
 
 /* Header */
@@ -24,7 +24,7 @@ header {
 }
 
 .headline {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #00b0ff;
   font-weight: 700;
   letter-spacing: 1px;
@@ -56,9 +56,9 @@ header {
   transform: translateY(0);
 }
 
-/* Foto sekitar 40% lebar */
+/* Foto 70% lebar */
 .image-container {
-  flex: 0 0 40%;
+  flex: 0 0 70%;
   padding: 20px;
 }
 
@@ -67,16 +67,16 @@ header {
   height: auto;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  max-width: 400px; /* supaya gak terlalu besar */
+  max-width: 600px;
   display: block;
   margin: 0 auto;
 }
 
-/* Teks 60% lebar */
+/* Teks 30% lebar, tapi batasi max-width supaya gak terlalu kecil */
 .text-container {
   flex: 1;
   padding: 20px;
-  max-width: 650px;
+  max-width: 400px;
   margin: auto;
 }
 
@@ -87,7 +87,7 @@ header {
 }
 
 .text-container p {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 1.8;
   color: #ddd;
 }
@@ -143,29 +143,29 @@ footer {
   background-color: #111;
 }
 
-/* Responsive - untuk layar kecil tetap seperti sebelumnya */
+/* Responsive - mobile tetap sama */
 @media (max-width: 768px) {
   html {
-    font-size: 16px; /* default di HP */
+    font-size: 16px; /* reset font dasar */
   }
-  
+
   .character-section {
     flex-direction: column;
     text-align: center;
     padding: 30px 10px;
   }
-  
+
   .image-container,
   .text-container {
     flex: unset;
     max-width: 100%;
     padding: 10px 0;
   }
-  
+
   .text-container h2 {
     font-size: 2rem;
   }
-  
+
   .text-container p {
     font-size: 1rem;
     line-height: 1.5;
