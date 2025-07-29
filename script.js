@@ -1,4 +1,4 @@
-const sections = document.querySelectorAll('.image-section');
+const sections = document.querySelectorAll('.character-section');
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -15,4 +15,3 @@ const observer = new IntersectionObserver(entries => {
 sections.forEach(section => {
   observer.observe(section);
 });
-
