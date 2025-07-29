@@ -6,7 +6,7 @@
 }
 
 html {
-  font-size: 20px; /* font dasar lebih besar */
+  font-size: 18px; /* font dasar lebih besar untuk desktop */
 }
 
 body {
@@ -14,7 +14,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #fff;
   overflow-x: hidden;
-  font-size: 1rem; /* 20px */
+  font-size: 1rem; /* 18px */
 }
 
 /* Header */
@@ -24,7 +24,7 @@ header {
 }
 
 .headline {
-  font-size: 2.8rem;
+  font-size: 2rem;
   color: #00b0ff;
   font-weight: 700;
   letter-spacing: 1px;
@@ -44,7 +44,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 60px 40px;
   min-height: 100vh;
   transition: opacity 1s ease, transform 1s ease;
   opacity: 0;
@@ -56,39 +56,28 @@ header {
   transform: translateY(0);
 }
 
-/* Foto 70% lebar */
-.image-container {
-  flex: 0 0 70%;
+.image-container,
+.text-container {
+  flex: 1;
   padding: 20px;
 }
 
 .image-container img {
   width: 100%;
-  height: auto;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  max-width: 600px;
-  display: block;
-  margin: 0 auto;
 }
 
-/* Teks 30% lebar, tapi batasi max-width supaya gak terlalu kecil */
-.text-container {
-  flex: 1;
-  padding: 20px;
-  max-width: 400px;
-  margin: auto;
-}
-
+/* Perbesar font teks di desktop */
 .text-container h2 {
-  font-size: 3rem;
+  font-size: 2.8rem; /* dari 2.5rem */
   color: #fff;
   margin-bottom: 20px;
 }
 
 .text-container p {
-  font-size: 1.5rem;
-  line-height: 1.8;
+  font-size: 1.4rem; /* dari 1.2rem */
+  line-height: 1.7;
   color: #ddd;
 }
 
@@ -143,23 +132,22 @@ footer {
   background-color: #111;
 }
 
-/* Responsive - mobile tetap sama */
+/* Responsive */
 @media (max-width: 768px) {
   html {
-    font-size: 16px; /* reset font dasar */
+    font-size: 16px; /* reset font dasar di HP */
   }
 
   .character-section {
     flex-direction: column;
     text-align: center;
-    padding: 30px 10px;
+    padding: 60px 20px 20px;
   }
 
   .image-container,
   .text-container {
     flex: unset;
-    max-width: 100%;
-    padding: 10px 0;
+    padding: 20px 0;
   }
 
   .text-container h2 {
