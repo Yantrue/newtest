@@ -1,21 +1,125 @@
-const track = document.querySelector('.carousel-track');
-const prevBtn = document.querySelector('.carousel-btn.prev');
-const nextBtn = document.querySelector('.carousel-btn.next');
-
-let currentSlide = 0;
-const totalSlides = document.querySelectorAll('.character-section').length;
-
-function updateSlide(position) {
-  const offset = position * -100;
-  track.style.transform = `translateX(${offset}%)`;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-nextBtn.addEventListener('click', () => {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  updateSlide(currentSlide);
-});
+body {
+  background-color: #000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
+}
 
-prevBtn.addEventListener('click', () => {
-  currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-  updateSlide(currentSlide);
-});
+/* Header */
+header {
+  text-align: center;
+  padding: 60px 20px 20px;
+  position: relative;
+  animation: slideDown 1.2s ease-out forwards;
+}
+
+.headline {
+  font-size: 1.8rem;
+  color: #004080;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: fadeInTop 1s ease-out forwards 0.5s;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.line {
+  width: 50px;
+  height: 3px;
+  background-color: #004080;
+  margin: 10px auto 0;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 1.3s;
+}
+
+/* Character section */
+.character-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 60px 40px;
+  transition: opacity 1s ease, transform 1s ease;
+  opacity: 0;
+  transform: translateY(80px);
+}
+
+.character-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Layout kiri-kanan */
+.image-container, .text-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.text-container h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Dominan warna per karakter */
+.prolova {
+  background-color: #2e1f4f;
+}
+
+.shorekeeper {
+  background-color: #0b1c2d;
+}
+
+/* Animations */
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  color: #888;
+  background-color: #111;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .character-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
