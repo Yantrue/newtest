@@ -15,22 +15,24 @@ body {
 /* Header */
 header {
   text-align: center;
-  padding: 80px 20px 30px;
+  padding: 60px 20px 20px;
   position: relative;
   animation: slideDown 1.2s ease-out forwards;
 }
 
 .headline {
-  font-size: 3rem;
-  color: #004080; /* biru tua */
+  font-size: 1.8rem;           /* ✅ Lebih kecil */
+  color: #004080;              /* Tetap biru tua */
   opacity: 0;
-  transform: translateY(-30px);
+  transform: translateY(-20px);
   animation: fadeInTop 1s ease-out forwards 0.5s;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .line {
-  width: 80px;
-  height: 4px;
+  width: 50px;                 /* ✅ Lebih pendek */
+  height: 3px;                 /* ✅ Lebih tipis */
   background-color: #004080;
   margin: 10px auto 0;
   opacity: 0;
