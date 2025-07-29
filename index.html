@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Wife</title>
+  <title>My Wife - Carousel</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -13,31 +13,36 @@
     <div class="line"></div>
   </header>
 
-  <section class="character-section prolova hidden">
-    <div class="image-container">
-      <img src="pict/prolova.jpeg" alt="Prolova" />
-    </div>
-    <div class="text-container">
-      <h2>Prolova</h2>
-      <p>
-        Prolova adalah pribadi yang tenang, anggun, dan penuh perhitungan.
-        Ia memiliki empati tinggi dan mampu menjadi penenang dalam situasi sulit.
-      </p>
-    </div>
-  </section>
+  <main class="carousel-container">
+    <div class="carousel-track">
+      <section class="character-section prolova">
+        <div class="image-container">
+          <img src="pict/prolova.jpeg" alt="Prolova" />
+        </div>
+        <div class="text-container">
+          <h2><a href="prolova.html">Prolova</a></h2>
+          <p>Prolova adalah pribadi yang tenang, anggun, dan penuh perhitungan. Ia memiliki empati tinggi dan mampu menjadi penenang dalam situasi sulit.</p>
+        </div>
+      </section>
 
-  <section class="character-section shorekeeper hidden">
-    <div class="image-container">
-      <img src="pict/shorekeeper.jpeg" alt="Shorekeeper" />
+      <section class="character-section shorekeeper">
+        <div class="image-container">
+          <img src="pict/shorekeeper.jpeg" alt="Shorekeeper" />
+        </div>
+        <div class="text-container">
+          <h2><a href="shorekeeper.html">Shorekeeper</a></h2>
+          <p>Shorekeeper adalah karakter kuat dan pelindung. Setia, teguh pendirian, dan sangat berani menghadapi tantangan.</p>
+        </div>
+      </section>
     </div>
-    <div class="text-container">
-      <h2>Shorekeeper</h2>
-      <p>
-        Shorekeeper adalah karakter kuat dan pelindung. Setia, teguh pendirian,
-        dan sangat berani menghadapi tantangan.
-      </p>
-    </div>
-  </section>
+
+    <button class="carousel-btn prev">&#8592;</button>
+    <button class="carousel-btn next">&#8594;</button>
+  </main>
+
+  <footer>
+    <p>Dedicated by Myukun❤️</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
