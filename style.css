@@ -6,81 +6,106 @@
 }
 
 body {
+  background-color: #000;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #fff;
+  overflow-x: hidden;
 }
 
 /* Header */
 header {
-  position: sticky;
-  top: 0;
-  background-color: #000;
-  color: #fff;
-  padding: 20px;
   text-align: center;
-  z-index: 10;
+  padding: 80px 20px 30px;
+  position: relative;
+  animation: slideDown 1.2s ease-out forwards;
 }
 
-header h1 {
-  font-size: 2.5rem;
-  letter-spacing: 2px;
+.headline {
+  font-size: 3rem;
+  color: #004080; /* biru tua */
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeInTop 1s ease-out forwards 0.5s;
 }
 
-/* Section layout */
+.line {
+  width: 80px;
+  height: 4px;
+  background-color: #004080;
+  margin: 10px auto 0;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards 1.3s;
+}
+
+/* Character section */
 .character-section {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  min-height: 100vh;
+  justify-content: center;
+  height: 100vh; /* Full screen per karakter */
   padding: 60px 40px;
   transition: opacity 1s ease, transform 1s ease;
   opacity: 0;
   transform: translateY(80px);
-  color: #fff;
 }
 
-.character-section .image-container {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-}
-
-.character-section .image-container img {
-  max-width: 90%;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
-
-.character-section .text-container {
-  flex: 1;
-  padding: 20px;
-}
-
-.character-section .text-container h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-}
-
-.character-section .text-container p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-}
-
-/* Warna dominan karakter */
-.prolova {
-  background-color: #5e4b8b; /* Ungu gelap elegan */
-}
-
-.shorekeeper {
-  background-color: #1e3d59; /* Biru laut gelap */
-}
-
-/* Animasi show saat scroll */
 .character-section.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Responsive (opsional) */
+/* Layout kiri-kanan */
+.image-container, .text-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.text-container h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.text-container p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Dominan warna per karakter */
+.prolova {
+  background-color: #2e1f4f; /* Ungu gelap */
+}
+
+.shorekeeper {
+  background-color: #0b1c2d; /* Biru laut gelap */
+}
+
+/* Animations */
+@keyframes fadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .character-section {
     flex-direction: column;
