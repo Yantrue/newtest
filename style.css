@@ -16,36 +16,31 @@ body {
 header {
   text-align: center;
   padding: 60px 20px 20px;
-  position: relative;
-  animation: slideDown 1.2s ease-out forwards;
 }
 
 .headline {
-  font-size: 1.8rem;
-  color: #004080;
-  opacity: 0;
-  transform: translateY(-20px);
-  animation: fadeInTop 1s ease-out forwards 0.5s;
-  font-weight: 600;
+  font-size: 2rem;
+  color: #00b0ff;
+  font-weight: 700;
   letter-spacing: 1px;
+  animation: fadeInTop 1s ease-out forwards;
 }
 
 .line {
-  width: 50px;
+  width: 60px;
   height: 3px;
-  background-color: #004080;
-  margin: 10px auto 0;
-  opacity: 0;
-  animation: fadeIn 1s ease-out forwards 1.3s;
+  background-color: #00b0ff;
+  margin: 10px auto;
+  animation: fadeIn 1s ease-out forwards 1s;
 }
 
-/* Character section */
+/* Character Sections */
 .character-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
   padding: 60px 40px;
+  min-height: 100vh;
   transition: opacity 1s ease, transform 1s ease;
   opacity: 0;
   transform: translateY(80px);
@@ -56,15 +51,14 @@ header {
   transform: translateY(0);
 }
 
-/* Layout kiri-kanan */
-.image-container, .text-container {
+.image-container,
+.text-container {
   flex: 1;
   padding: 20px;
 }
 
 .image-container img {
-  max-width: 100%;
-  height: auto;
+  width: 100%;
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
@@ -81,13 +75,25 @@ header {
   color: #ddd;
 }
 
-/* Dominan warna per karakter */
+/* Background color per karakter */
 .prolova {
   background-color: #2e1f4f;
 }
 
 .shorekeeper {
   background-color: #0b1c2d;
+}
+
+.cantarella {
+  background-color: #1a0f2b;
+}
+
+.cartethyia {
+  background-color: #162329;
+}
+
+.miyabi {
+  background-color: #29180c;
 }
 
 /* Animations */
@@ -103,8 +109,12 @@ header {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Footer */
